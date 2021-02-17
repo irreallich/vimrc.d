@@ -1,0 +1,94 @@
+" VIM scripts
+" Author: hjwang
+" Created Time : Fri 15 Nov 2019 08:06:26 AM UTC
+" File Name: config/feature.fte
+" Description:
+"""
+
+let s:filename = fnamemodify(expand('<sfile>'), ':t:r')
+
+function! Default_feature_feature() 
+    "-----------------------------------vimconfig------------------------------------------ 
+    call hjfeature#set('vimconfig','generic',1)
+    call hjfeature#set('vimconfig','comments',1)
+    call hjfeature#set('vimconfig','autocmd',1)
+    call hjfeature#set('vimconfig','command',1)
+
+    "-----------------------------------basic------------------------------------------ 
+    call hjfeature#set('basic','indentline',1)
+    call hjfeature#set('basic','startify',1)
+    call hjfeature#set('basic','multiple_cursors',1)
+    call hjfeature#set('basic','asyncrun',1)
+    call hjfeature#set('basic','rainbow',1)
+    call hjfeature#set('basic','autopairs',1)           " 括号自动补全
+    call hjfeature#set('basic','vim_misc',1)            " vim的函数库
+    "call hjfeature#set('basic','vim_devicons',1)       " vim图标库,需要nerd font支持
+    
+    "-----------------------------------tools------------------------------------------ 
+    call hjfeature#set('tools','vinarise',1)            " 处理二进制文件
+    call hjfeature#set('tools','interestingwords',1)    " 增加多个高亮字符功能
+    call hjfeature#set('tools','bookmarks',1)           " 标记的增强插件
+    call hjfeature#set('tools','vim_diff_enhanced',1)
+    call hjfeature#set('tools','tabular',1)
+    call hjfeature#set('tools','vim_vimscript_formatter',1)
+    "call hjfeature#set('tools','vim_terminal_help',1)  " 此插件会修改vim terminal的默认习惯,并修改窗口切换键为
+    "call hjfeature#set('tools','cursorword',1)         " 很好看,但是会导致vim变得比较慢
+
+    "-----------------------------------themes------------------------------------------ 
+    call hjfeature#set('themes','themes',1)
+
+    "-----------------------------------complete------------------------------------------ 
+    call hjfeature#set('tr_mode','youcompleteme',1)
+    call hjfeature#set('tr_mode','gutentags',1)
+    call hjfeature#set('tr_mode','ale',1)
+
+    call hjfeature#set('lsp_mode','coc',1)
+
+    "-----------------------------------git------------------------------------------ 
+    call hjfeature#set('git','vim_signify',1)
+    call hjfeature#set('git','vim_fugitive',1)
+    
+    "-----------------------------------help------------------------------------------ 
+    call hjfeature#set('help','vimcdoc',1)
+
+    "-----------------------------------statusline------------------------------------------ 
+    " if I don't set airline as auto mode, that means I use ht plug#load to manual load airline
+    " airline will be incorrect for powerline fonts
+    " so it need two steps to use lightline instead of airline
+    " 1. enable lightline and disable airline here
+    " 2. enter airline.vim, set the airline plugmode as normal 
+    
+    call hjfeature#set('status_line','lightline',1)
+    call hjfeature#set('status_line','airline',1)
+
+    "-----------------------------------syntax_hilight------------------------------------------ 
+    call hjfeature#set('syntax_hilight','vim_polyglot',1)
+
+    "-----------------------------------search------------------------------------------ 
+    call hjfeature#set('search','leaderf',1)
+
+    "
+    "-----------------------------------tagbar------------------------------------------ 
+    "call hjfeature#set('tag_bar','vista',1)
+    call hjfeature#set('tag_bar','tagbar',1)
+
+    "-----------------------------------c------------------------------------------ 
+    call hjfeature#set('c','a',1)
+    "call hjfeature#set('c','errormarker',1)
+    "call hjfeature#set('c','cctree',1)
+    call hjfeature#set('c','vim_clang_format',1)
+
+    "-----------------------------------file_browser------------------------------------------ 
+    call hjfeature#set('file_browser','nerdtree',1)
+    call hjfeature#set('file_browser','defx',1)
+    call hjfeature#set('file_browser','vim_dirvish',1)
+   
+    "-----------------------------------move------------------------------------------ 
+    call hjfeature#set('move','vim_easymotion',1)
+
+
+    "-----------------------------------markdown------------------------------------------ 
+    call hjfeature#set('markdown','vim_markdown',1)
+
+endfunction
+

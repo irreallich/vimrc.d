@@ -1,0 +1,3 @@
+--exclude=plugged_vim802_win32
+--exclude=plugged_vim802_win64
+--exclude=plugged_vim802_linux

@@ -1,0 +1,50 @@
+" VIM scripts
+" Author: hjwang
+" Created Time : Fri 15 Nov 2019 06:03:54 AM UTC
+" File Name: config/group.grp
+" Description:
+"""
+
+let s:filename = fnamemodify(expand('<sfile>'), ':t:r')
+
+function! Default_group_group() 
+    "-----------------------------------generic------------------------------------------ 
+    call hjgroup#set('generic','vimconfig','default')
+    call hjgroup#set('generic','basic','default')
+    call hjgroup#set('generic','tools','default')
+    call hjgroup#set('generic','help','default')
+    call hjgroup#set('generic','themes','default')
+    call hjgroup#set('generic','move','default')
+    call hjgroup#set('generic','search','default')
+    call hjgroup#set('generic','git','default')
+
+    " for unique plugs
+    call hjgroup#set('generic','file_browser',hjinit#get('sys','file_browser'))
+    call hjgroup#set('generic','status_line',hjinit#get('sys','status_line'))
+    call hjgroup#set('generic','tag_bar',hjinit#get('sys','tag_bar'))
+    call hjgroup#set('generic','syntax_hilight',hjinit#get('sys','syntax_hilight'))
+
+    " 如果将youcompleteme通过autocmd，基于文件类型自己动加载，会出现以下问题：
+    " 加载的时候会按照先按照ycm默认参数加载各种功能，之后才会加载控制函数，会导致控制函数里的设置不起作用
+    " tr_mode使用ycm + gutentags + ale
+    " lsp_mode 使用con.nvim
+    call hjgroup#set('generic','tr_mode','default')
+    " call hjgroup#set('generic','lsp_mode','default')
+
+    "-----------------------------------c------------------------------------------ 
+    call hjgroup#set('c','c','default')
+
+    "-----------------------------------bash------------------------------------------ 
+    "call hjgroup#set('bash','syntax_hilight',hjinit#get('sys','syntax_hilight'))
+
+    "-----------------------------------python3------------------------------------------ 
+    "call hjgroup#set('python','syntax_hilight',hjinit#get('sys','syntax_hilight'))
+    
+    "-----------------------------------vimscript------------------------------------------ 
+    "call hjgroup#set('vimscript','syntax_hilight',hjinit#get('sys','syntax_hilight'))
+
+
+    "-----------------------------------manual------------------------------------------ 
+
+endfunction
+
